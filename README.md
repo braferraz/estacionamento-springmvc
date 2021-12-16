@@ -12,3 +12,17 @@
 - Edita veículos;
 - Efetua saída dos veículos, calculando as horas que foi estacionado e calculando o preço;
 - Demonstra lista de veículos estacionados e veículos retirados.
+
+# Views do projeto
+
+#### Login
+<img width="500px" src="https://user-images.githubusercontent.com/50770601/146319696-6bbb64b1-ca2d-47d4-ac86-46e0665a3d6e.png"/>
+
+#### Veículos estacionados
+<img src="https://user-images.githubusercontent.com/50770601/146319699-83f7eaa8-f63e-4d3e-9688-9c0ded453efb.png"/>
+
+#### Veículos que já foram retirados
+<img src="https://user-images.githubusercontent.com/50770601/146319701-53f11d4c-7831-4505-b1a5-fe74fcd47c60.png"/>
+
+#### Inserção de veículos
+<img src="https://user-images.githubusercontent.com/50770601/146319694-93d229cf-1cb1-4f43-b494-cd012fe10689.png"/>
