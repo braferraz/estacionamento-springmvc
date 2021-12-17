@@ -36,7 +36,7 @@ public class LoginController {
 			mv.setViewName("/");
 		}
 		
-		Usuario userLogin = userService.loginUser(usuario.getUser(), usuario.getSenha());
+		Usuario userLogin = userService.loginUser(usuario.getUsu(), usuario.getSenha());
 		if(userLogin == null) {
 			mv.addObject("msg", "Usuário não encontrado, verifique seu usuário e senha e tente novamente.");
 		}

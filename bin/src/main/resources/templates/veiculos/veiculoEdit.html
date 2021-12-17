@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Editar veículo - Estacionamento</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+
+<div class="container row">
+   <div class="d-flex justify-content-center mt-5">
+	<div class="col s6 offset-s3 formuLogin">
+	<h3>Editar veículo</h3>
+	<form th:action="@{/veiculos/edit/}"  th:object="${veiculo}" method="post">
+		<div class="input-field col s12">
+			<input type="hidden" th:field="*{id}"/>
+			<label>Modelo:</label>
+			<input class="form-control validate" type="text" name="modelo" th:field="*{modelo}" th:value="modelo">
+			<div class="mostraErro">
+				<p><span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></span></p>
+			</div>
+		</div>
+		<div class="input-field col s12">
+			<label >Placa:</label>
+			<input class="form-control validate" type="text" name="placa" th:field="*{placa}" th:value="vec.placa">
+			<div class="mostraErro">
+				<p><span th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></span></p>
+			</div>
+		</div>
+		<input class="form-control" type="hidden" readonly=“true” name="dataEntrada" th:value="${veiculo.dataEntrada}">
+		<div class="col s7 right rowBtn">
+			<button type="submit" class="btn waves-button-input">Atualizar Veículo</button>
+			<button type="button" class="btn waves-button-input"><a href="/sistema">Voltar</a></button>
+		</div>
+	</form>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript" th:src="@{/materialize/js/materialize.min.js}"></script>
+</body>
+</html>

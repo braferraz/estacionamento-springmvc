@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Estacionamento - Bem Vindo!</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/saida.css}"/>
+</head>
+<body>
+<div class="container row saida">
+	<div class="col s6 offset-s3 formuLogin">
+	<h3>Registrar saída</h3>
+	<form action="/veiculos/saida/" method="post">
+		<input type="hidden" th:field="*{veiculo.id}"/>
+		<div class="input-field col s12">
+			<label for="modelo">Modelo:</label>
+			<input class="form-control" type="text" readonly=“true” name="modelo" th:value="*{veiculo.modelo}">
+		</div>
+		<div class="input-field col s12">
+			<label for="placa">Placa:</label>
+			<input class="form-control" type="text" readonly=“true” name="placa" th:value="*{veiculo.placa}">
+		</div>
+		<div class="input-field col s12">
+			<label for="dataEntrada">Data Entrada:</label>
+			<input class="form-control" type="text" readonly=“true” name="dataEntrada" th:value="${veiculo.dataEntrada}">
+		</div>
+		<div class="input-field col s12">
+			<label for="dataSaida">Data Saida:</label>
+			<input class="form-control" type="text" readonly=“true” name="dataSaida" th:value="${dataSaida}">
+		</div>
+		<div class="input-field col s12">
+			<label for="tempo">Horas permanecidas:</label>
+			<input class="form-control" type="text" readonly=“true” name="tempo" th:value="${horas}">
+		</div>
+		<div class="input-field col s12">
+			<label for="valorPago">Preço(R$):</label>
+			<input class="form-control" type="text" readonly=“true” name="valorPago"  th:value="${#numbers.formatDecimal(preco, 0, 'COMMA', 2, 'POINT') }" >
+		</div>
+		<div class="col s7 right rowBtn">
+			<button type="submit" class="btn waves-button-input">Registrar Saída</button>
+			<button type="button" class="btn waves-button-input"><a href="/sistema">Voltar</a></button>
+		</div>
+	</form>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript" th:src="@{/materialize/js/materialize.min.js}"></script>
+</body>
+</html>

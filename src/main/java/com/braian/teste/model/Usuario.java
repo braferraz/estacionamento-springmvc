@@ -15,35 +15,35 @@ public class Usuario {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	
 	@Column(nullable = false)
 	private String nome;
 	@NotNull()
 	@Column(nullable = false)
-	private String user;
+	private String usu;
 	
 	@NotNull()
 	@Column(nullable = false)
 	private String senha;
 	
-	public Usuario(Long id, String nome, String user, String senha) {
+	public Usuario(int id, String nome, String usu, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.user = user;
+		this.usu = usu;
 		this.senha = senha;
 	}
 
 	public Usuario() {
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -55,12 +55,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getUser() {
-		return user;
+	public String getUsu() {
+		return usu;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setUsu(String usu) {
+		this.usu = usu;
 	}
 
 	public String getSenha() {
@@ -73,7 +73,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", user=" + user + ", senha=" + senha + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", usuario=" + usu + ", senha=" + senha + "]";
 	}
 
 }

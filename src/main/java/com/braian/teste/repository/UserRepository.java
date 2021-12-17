@@ -9,6 +9,6 @@ import com.braian.teste.model.Usuario;
 @Repository
 public interface UserRepository extends JpaRepository<Usuario, Long>{
 
-	@Query("SELECT j FROM tbl_usuario j WHERE j.user = :user AND j.senha = :senha")
-	public Usuario buscarLogin(String user, String senha); 
+	@Query("SELECT j FROM tbl_usuario j WHERE j.usu = :usu AND j.senha = :senha")
+	public Usuario buscarLogin(String usu, String senha); 
 }
