@@ -36,7 +36,8 @@
 		</div>
 		<div class="input-field col s12">
 			<label for="valorPago">Preço(R$):</label>
-			<input class="form-control" type="text" readonly=“true” name="valorPago"  th:value="${#numbers.formatDecimal(preco, 0, 'COMMA', 2, 'POINT') }" >
+			<input class="form-control" type="text" readonly=“true” th:value="${#numbers.formatCurrency(preco)}">
+			<input type="hidden" name="valorPago" th:value="${preco}"> 
 		</div>
 		<div class="col s7 right rowBtn">
 			<button type="submit" class="btn waves-button-input">Registrar Saída</button>

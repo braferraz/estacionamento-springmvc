@@ -107,8 +107,7 @@ public class VeiculoController {
 	}
 	
 	@PostMapping("/veiculos/saida/")
-	public ModelAndView setSaida(@Valid Veiculo veiculo) throws ParseException {
-		System.out.println(veiculo);
+	public ModelAndView setSaida( Veiculo veiculo) throws ParseException {
 		veiculoRepository.save(veiculo);
 		ModelAndView mv = new ModelAndView("redirect:/sistema");
 		return mv;

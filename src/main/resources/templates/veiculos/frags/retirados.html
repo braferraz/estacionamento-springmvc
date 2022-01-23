@@ -18,8 +18,8 @@
 	      <td th:text="${veiculoFora.placa}"></td>
 	      <td th:text="${veiculoFora.dataEntrada}"></td>
 	      <td th:text="${veiculoFora.dataSaida}"></td>
-	      <td th:text="${veiculoFora.tempo} + ' h'"></td>
-	      <td th:text="${'R$ ' + #numbers.formatDecimal(veiculoFora.valorPago, 0, 'COMMA', 2, 'POINT')}"></td>
+	      <td th:text="${#numbers.formatDecimal(veiculoFora.tempo, 0, 'POINT', 0, 'NONE')} + ' h'"></td>
+	      <td th:text="${'R$ ' + #numbers.formatDecimal(veiculoFora.valorPago, 0, 'POINT', 2, 'COMMA')}"></td>
 	    </tr>
 	  </tbody>
 	</table>
