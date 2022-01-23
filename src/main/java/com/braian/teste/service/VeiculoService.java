@@ -3,14 +3,11 @@ package com.braian.teste.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.braian.teste.model.Preco;
-import com.braian.teste.model.Veiculo;
-import com.braian.teste.repository.VeiculoRepository;
 import com.braian.teste.repository.PrecoRepository;
 
 @Service
@@ -18,9 +15,6 @@ public class VeiculoService {
 
 	@Autowired
 	private PrecoRepository precoRepository;
-	
-	@Autowired
-	private VeiculoRepository carroRepository;
 	
 	
 	public Long calcularTempo(String dataEntrada, String dataSaida) throws ParseException {
