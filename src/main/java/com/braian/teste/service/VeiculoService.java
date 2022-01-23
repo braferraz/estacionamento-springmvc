@@ -55,10 +55,4 @@ public class VeiculoService {
 		
 		return preco;
 	}
-	
-	public Double converteValorPago(Veiculo veiculo) {
-		Double a = veiculo.getValorPago();
-		System.out.println(a);
-		return null;
-	}
 }
