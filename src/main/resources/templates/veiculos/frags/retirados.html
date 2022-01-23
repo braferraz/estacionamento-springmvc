@@ -1,0 +1,26 @@
+<th:block th:fragment="content" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<table class="table table-stripped">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Veículos</th>
+	      <th scope="col">Placa</th>
+	      <th scope="col">Data Entrada</th>
+	      <th scope="col">Data Saida</th>
+	      <th scope="col">Tempo Estacionado</th>
+	      <th scope="col">Preço</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="veiculoFora: ${veiculosFora}">
+	      <th scope="row" th:text="${veiculoFora.id}"></th>
+	      <td th:text="${veiculoFora.modelo}"></td>
+	      <td th:text="${veiculoFora.placa}"></td>
+	      <td th:text="${veiculoFora.dataEntrada}"></td>
+	      <td th:text="${veiculoFora.dataSaida}"></td>
+	      <td th:text="${#numbers.formatDecimal(veiculoFora.tempo, 0, 'POINT', 0, 'NONE')} + ' h'"></td>
+	      <td th:text="${'R$ ' + #numbers.formatDecimal(veiculoFora.valorPago, 0, 'POINT', 2, 'COMMA')}"></td>
+	    </tr>
+	  </tbody>
+	</table>
+</th:block>

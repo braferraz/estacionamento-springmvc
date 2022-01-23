@@ -1,0 +1,26 @@
+.table {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+body {
+	text-align:center;
+	margin:200px 0px;
+}
+.nav-wrapper{
+	background-color: #26a69a !important;
+}
+.nav-wrapper a{
+	width:50px;
+	color:white;
+	text-decoration:none;
+	transition: 0.5s;
+}
+.nav-wrapper a:hover{
+	background: rgba(255, 255, 255, 0.33);
+	transition: 0.5s;
+}
+select {
+	margin-top:10px;
+}
+#teste {
+	margin-right:10px;
+}

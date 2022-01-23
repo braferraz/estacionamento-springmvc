@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Estacionamento - LOGIN</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+
+
+	<div class="container">
+	   <div class="row d-flex justify-content-center mt-5">
+			<div class="col-6 formuLogin">
+			<h3>Sistema de Estacionamento</h3>
+	           <form th:object="${usuario}" method="post">
+		           	<div class="mostraErro">
+							<p th:text="${msg}"></p>
+					</div>
+	               <div class="input-field col s12">
+	               		<label for="usuario">Usuário:</label>
+                  	 	<input type="text" class="form-control validate" placeholder="Usuário *" th:field="*{usu}"/>
+	               </div>
+	               <div class="input-field col s12">
+	               	<label for="senha">Senha:</label>
+	                   <input type="password" class="form-control validate" placeholder="Senha *" th:field="*{senha}" />
+	               </div>
+	               <div class="col s5 offset-s7">
+	                   <button type="submit" class="btnSubmit btn waves-effect waves-light" value="">Logar no Sistema</button>
+	               </div>
+	           </form>
+	       </div>
+   		</div>
+ 	</div>
+ 	
+<script type="text/javascript" th:src="@{/materialize/js/materialize.min.js}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+    setTimeout(function(){
+        $(".mostraErro").hide(1);
+        }, 2000);
+      });
+</script>
+</body>
+</html>

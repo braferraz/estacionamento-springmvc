@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Estacionamento - Bem Vindo!</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
+
+<!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}"/>
+</head>
+<body>
+
+<div class="container">
+
+<div class="row d-flex justify-content-center mt-5">
+	<nav>
+	    <div class="nav-wrapper">
+	      	<a href="/veiculos/new" class="left col s3 offset-1">Inserir Veículo</a>
+	        <select id="teste" class="right browser-default col s3 offset-3">
+				<option value="Estacionado">Veiculos Estacionados</option>
+				<option value="Retirado">Veiculos Retirados</option>
+			</select>
+	    </div>
+  	</nav>
+	
+	
+	<table id="content" class="table table-stripped border">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Veículos</th>
+	      <th scope="col">Data de Entrada</th>
+	      <th scope="col" class="col-2">Ações</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="veiculoEst: ${veiculosEst}">
+	      <th scope="row" th:text="${veiculoEst.id}"></th>
+	      <td th:text="${veiculoEst.modelo}"></td>
+	      <td th:text="${veiculoEst.dataEntrada}"></td>
+	      <td><a th:href="@{/veiculos/edit/} + ${veiculoEst.id}">Editar Veículo</a></td>
+	      <td><a th:href="@{/veiculos/saida/} + ${veiculoEst.id}">Registrar Saída</a></td>
+	    </tr>
+	  </tbody>
+	</table>
+	</div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/materialize/js/materialize.min.js}"></script>
+
+     <script>
+	    $('#teste').change(function() {
+  			var marca = $('#teste').val();
+  			if(marca != "Retirado"){
+  				$(location).attr('href', '/sistema');
+  			}
+  			else{
+  				$("#content").load("sistema/retirados");
+  			}
+		});
+		
+    /*]]>*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Inserir veículo - Estacionamento</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" th:href="@{/materialize/css/materialize.min.css}"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+</head>
+<div class="container row">
+   <div class="d-flex justify-content-center mt-5">
+	<div class="col s6 offset-s3 formuLogin">
+		<h3>Inserir novo veículo</h3>
+		<form action="/veiculos/save" method="post" th:object="${veiculo}">
+			<div class="input-field col s12">
+				<label >Modelo:</label>
+				<input class="form-control validate" th:class="${#fields.hasErrors('modelo')}? invalid" type="text" name="modelo" th:field="*{modelo}">
+				<div class="mostraErro">
+					<p><span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></span></p>
+				</div>
+			</div>
+			<div class="input-field col s12">
+				<label>Placa:</label>
+				<input class="form-control validate" th:class="${#fields.hasErrors('placa')}? invalid" type="text" name="placa" th:field="*{placa}">
+				<div class="mostraErro">
+					<p><span th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></span></p>
+				</div>
+			</div>
+			<div class="input-field col s12">
+				<label for="dataEntrada">Data de entrada:</label>
+				<input class="form-control" type="text" readonly=“true” name="dataEntrada" th:value="${dataEntrada}" >
+			</div>
+			<div class="col s7 right rowBtn">
+				<button type="submit" class="btn waves-button-input">Inserir Veículo</button>
+				<button type="button" class="btn waves-button-input"><a href="/sistema">Voltar</a></button>
+			</div>
+			
+		</form>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript" th:src="@{/materialize/js/materialize.min.js}"></script>
+</body>
+</html>
