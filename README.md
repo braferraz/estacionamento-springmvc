@@ -1,8 +1,4 @@
 ## <img width="25px" src="https://user-images.githubusercontent.com/50770601/136637067-f78114ec-3fd5-42bd-b919-c47abcc4bd5e.png"/>  Sistema de estacionamento  
-### Acesso ao projeto
-- <a href="https://estacionamentospringmvc.herokuapp.com">Clique aqui para acessar o projeto</a>
-- Usuario: admin
-- Senha: admin
 
 ### Tecnologias utilizadas 
 - <img width="20px" src="https://user-images.githubusercontent.com/50770601/136637433-328734b6-6639-4c15-bd72-30570f054452.png"/> **Java** - Linguagem de programação utilizada
